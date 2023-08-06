@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pure-v2.0.6.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" type="module"></script>
+    <title>WAIS-IV — Symbol Search</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <h2>WAIS-IV — Symbol Search</h2>
+      <div class="instructions">
+        <div class="panel">
+          <p>Resize this window to a comfortable size.</p>
+          <p>The 2 symbols to the left (on gray background) are objectives.</p>
+          <p>Find the symbol on white background that matches either of the objectives, and click it.</p>
+          <p><b>There can be at most 1 match.</b></p>
+          <p>If there is no match, click <span class="no-example">NO</span></p>
+          <h4>Practice #1 of 2</h4>
+        </div>
+        <div class="panel hidden">
+          <p>There are 60 puzzles with a 2 minute time limit.</p>
+          <p>Be accurate, but as fast as possible.</p>
+          <p><u>There is a penalty for wrong answers.</u></p>
+          <p><b>There can be at most 1 match.</b></p>
+          <p>If there is no match, click <span class="no-example">NO</span></p>
+          <h4>Click BEGIN when you're ready to start.</h4>
+          <div class="start"><button id="start">BEGIN</button></div>
+        </div>
+      </div>
+      <div class="notif">&nbsp;</div>
+      <div class="row">
+        <div class="objective"></div>
+        <div class="objective"></div>
+        <div></div>
+        <div class="option"></div>
+        <div class="option"></div>
+        <div class="option"></div>
+        <div class="option"></div>
+        <div class="option"></div>
+        <div class="option no"></div>
+      </div>
+      <div class="input">
+        <label for="years">Your age in years:
+          <input id="years" type="number" value="16" step="1" min="16" max="79" />
+        </label>
+        <label for="raw-score">Raw Score:
+          <input id="raw-score" type="number" value="0" step="1" disabled />
+        </label>
+        <label for="scaled-score">Scaled Score:
+          <input id="scaled-score" type="number" value="0" step="1" disabled />
+        </label>
+        <label for="iq">IQ:
+          <input id="iq" type="number" value="0" disabled />
+        </label>
+      </div>
+    </div>
+  </body>
+
+</html>

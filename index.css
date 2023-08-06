@@ -1,0 +1,205 @@
+html {
+    font-family: 'Cambria Math';
+    font-size: 2.5em;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    padding: 0.115em;
+    height: 100%;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #container > * {
+    margin-bottom: 0.5em;
+  }
+  
+  h2 {
+    font-size: 0.4em;
+    text-align: center;
+  }
+  
+  h4 {
+    text-align: center;
+  }
+  
+  .instructions {
+    padding: 0.5em;
+    font-size: 0.4em;
+    text-align: left;
+    min-height: 17em;
+  }
+  
+  .instructions > span {
+    outline: 1px solid black;
+    font-weight: bold;
+    margin-left: 0.5em;
+    text-align: center;
+    height: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    font-family: 'Cambria' !important;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: min-content;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2em !important;
+    margin-top: 1em !important;
+  }
+  
+  .row.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  .row > div {
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .objective::before,
+  .option::before {
+    content: attr(data-symbol);
+    transform: rotate(var(--deg));
+    transform-origin: 50% 50%;
+    position: absolute;
+    font-size: 0.7em;
+  }
+  
+  .option:hover:not(.wrong):not(.correct) {
+    cursor: pointer;
+    background: yellow;
+  }
+  
+  .objective {
+    background: lightgrey;
+  }
+  
+  .no::before {
+    font-size: 0.5em;
+    font-family: 'Cambria' !important;
+    content: 'NO';
+    position: absolute;
+    font-weight: bold;
+    outline: 1px solid black;
+  }
+  
+  .no-example {
+    outline: 1px solid black;
+    font-weight: bold;
+    margin-left: 0.25em;
+    padding: 0.1em;
+  }
+  
+  .flashing {
+    color: red;
+    animation: flashing 1s linear infinite;
+  }
+  
+  .invisible {
+    opacity: 0;
+  }
+  
+  .puzzle-number {
+    font-size: 0.4em;
+    text-align: center;
+    opacity: 0.8;
+  }
+  
+  .puzzle-number::before {
+    content: '#';
+    opacity: 0.75;
+    margin: 0;
+  }
+  
+  .puzzle-number.invisible {
+    opacity: 0;
+  }
+  
+  @keyframes flashing {
+    0% {
+      color: red;
+    }
+    100% {
+      color: black;
+    }
+  }
+  
+  .input {
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .input > * {
+    margin-bottom: 0.25em;
+  }
+  
+  input {
+    box-sizing: border-box;
+    text-align: right;
+    width: 4em;
+    color: black;
+  }
+  
+  .notif {
+    user-select: none;
+    margin: auto;
+    text-align: center;
+    font-family: Courier;
+    font-size: 0.5em;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  .fade-out {
+    font-weight: bold;
+    animation: fade-out 2s linear;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .fade-in {
+    animation: fade-in 1s linear;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+  
+  .start {
+    text-align: center;
+  }
